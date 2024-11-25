@@ -223,3 +223,6 @@ for i in range(len(macierz)):
 else:
     print("Zbiór nie ma idola")
 ```
+### Uwagi do kodu
+`Else` w pętli `for` określa blok kodu, który zostanie wykonany po zakończeniu pętli.
+Uwaga: Blok `else` NIE zostanie wykonany, jeśli pętla zostanie zatrzymana przez instrukcję `break`
