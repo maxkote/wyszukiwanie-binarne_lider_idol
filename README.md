@@ -13,9 +13,9 @@
 
 1. Znajdź **środkowy element** w aktualnym zakresie (indeks: `(low + high) // 2`).
 2. Porównaj szukaną wartość z elementem środkowym:
-   - Jeśli równa: wartość została znaleziona.
-   - Jeśli mniejsza: przeszukuj lewą połowę.
-   - Jeśli większa: przeszukuj prawą połowę.
+   - Jeśli jest równa: wartość została znaleziona.
+   - Jeśli jest mniejsza: przeszukuj lewą połowę.
+   - Jeśli jest większa: przeszukuj prawą połowę.
 3. Powtarzaj, aż znajdziesz wartość lub zakres stanie się pusty.
 
 ## Kluczowe cechy:
