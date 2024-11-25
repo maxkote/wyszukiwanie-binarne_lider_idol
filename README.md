@@ -3,7 +3,7 @@
 - [2. Lider w zbiorze](#2-lider-w-zbiorze)
 - [3. Idol w zbiorze](#3-idol-w-zbiorze)
 
-
+---
 
 
 # 1. Wyszukiwanie binarne
@@ -81,7 +81,8 @@ def binary_search(arr, low, high, x):
         return -1
 ```
 
-
+---
+---
 
 # 2. Lider w zbiorze
 
@@ -143,20 +144,22 @@ else:
     print("Zbiór nie ma lidera")
 ```
 
+---
+---
 
 # 3. Idol w zbiorze
 
 ## Opis problemu
-W pewnej grupie osób każda osoba może znać inne osoby, ale nie jest to relacja wzajemna (osoba A może znać osobę B, ale osoba B niekoniecznie zna osobę A). **Idol** to osoba, która:
+W pewnej grupie osób każda osoba może znać inne osoby, ale nie musi to być relacja wzajemna (osoba A może znać osobę B, ale osoba B niekoniecznie zna osobę A). **Idol** to osoba, która:
 1. Jest znana przez wszystkich w grupie.
 2. Nie zna nikogo z grupy.
 
 Idola można znaleźć, analizując macierz sąsiedztwa. Wiersze w macierzy reprezentują wiedzę danej osoby o innych, a kolumny — wiedzę o tej osobie. Przyjmujemy, że:
 - Wartość `1` oznacza "zna".
 - Wartość `0` oznacza "nie zna".
-- Osoba nie zna samej siebie, więc na przekątnej macierzy są same zera.
+- Uznajemy, że żadna nie zna samej siebie, więc na przekątnej macierzy są same zera.
 
-## Przykładowa macierz
+## Przykładowy macierz
 Przykład macierzy dla grupy 5 osób:
 ```python
 macierz = [
@@ -175,19 +178,29 @@ macierz = [
 #### 1. Znalezienie Potencjalnego Idola
 - Przechodzimy przez każdy wiersz macierzy.
 - Jeśli wiersz składa się wyłącznie z zer, osoba odpowiadająca temu wierszowi jest potencjalnym idolem.
-
+```python
+for i in range(len(macierz)):
+    if macierz[i] == [0]*len(macierz):
+```
 #### 2. Weryfikacja Potencjalnego Idola
 - Sprawdzamy kolumnę odpowiadającą potencjalnemu idolowi.
 - Wszystkie elementy w tej kolumnie (z wyjątkiem przekątnej) muszą być równe `1`.
 - Jeśli znajdziemy `0` w kolumnie, zbiór nie ma idola.
+```python
+for i in range(len(macierz)):
+    if macierz[i] == [0]*len(macierz):
+        for x in macierz[:i] + macierz[i+1:]:
+            if x[i] == 0:
+                print("Zbior nie ma idola")
+                break
+```
 
 #### 3. Wynik
 - Jeśli oba warunki są spełnione, idol został znaleziony.
 - Jeśli żaden wiersz nie spełnia pierwszego warunku lub weryfikacja kolumny się nie powiedzie, idol nie istnieje.
 
----
 
-## Implementacja
+## Implementacja w Pythonie
 
 ```python
 macierz = [
