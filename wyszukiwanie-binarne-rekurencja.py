@@ -1,7 +1,6 @@
-# Python 3 program for recursive binary search.
-# Modifications needed for the older Python 2 are found in comments.
-
+#program for recursive binary search.
 # Returns index of x in arr if present, else -1
+
 def binary_search(arr, low, high, x):
 
     # Check base case
