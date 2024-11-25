@@ -149,6 +149,9 @@ else:
 
 # 3. Idol w zbiorze
 
+### Definicje
+**Macierz** - to uporządkowana tabela liczb ułożona w wierszach i kolumnach
+
 ## Opis problemu
 W pewnej grupie osób każda osoba może znać inne osoby, ale nie musi to być relacja wzajemna (osoba A może znać osobę B, ale osoba B niekoniecznie zna osobę A). **Idol** to osoba, która:
 1. Jest znana przez wszystkich w grupie.
@@ -226,3 +229,11 @@ else:
 ### Uwagi do kodu
 `Else` w pętli `for` określa blok kodu, który zostanie wykonany po zakończeniu pętli.
 Uwaga: Blok `else` NIE zostanie wykonany, jeśli pętla zostanie zatrzymana przez instrukcję `break`
+
+
+### Źródła
+https://www.geeksforgeeks.org/python-program-for-binary-search/
+https://www.datacamp.com/tutorial/binary-search-python
+https://www.algorytm.edu.pl/algorytmy-maturalne/wyszukiwanie-binarne.html
+https://zpe.gov.pl/pdf/PtWaEG5pv
+
