@@ -1,6 +1,7 @@
 ## Spis Treści:
 - [1. Wyszukiwanie binarne](#1-wyszukiwanie-binarne)
 - [2. Lider w zbiorze](#2-lider-w-zbiorze)
+- [3. Idol w zbiorze](#3-idol-w-zbiorze)
 
 
 
@@ -64,7 +65,7 @@
 ## Złożoność obliczeniowa:
 - Algorytm wyszukiwania lidera jest efektywny, ponieważ pozwala na znalezienie lidera w O(n) czasie, eliminując konieczność wielokrotnego sprawdzania każdej liczby.
 
-### Implementacja w Pythonie:
+## Implementacja w Pythonie:
 
 ```python
 zbior = [1, 3, 3, 2, 5, 5, 3, 3, 3, 3, 1]
@@ -120,20 +121,20 @@ macierz = [
 ]
 ```
 
-# Algorytm Wykrywania Idola
+## Algorytm Wykrywania Idola
 
-## Kroki Algorytmu
+### Kroki Algorytmu
 
-### 1. Znalezienie Potencjalnego Idola
+#### 1. Znalezienie Potencjalnego Idola
 - Przechodzimy przez każdy wiersz macierzy.
 - Jeśli wiersz składa się wyłącznie z zer, osoba odpowiadająca temu wierszowi jest potencjalnym idolem.
 
-### 2. Weryfikacja Potencjalnego Idola
+#### 2. Weryfikacja Potencjalnego Idola
 - Sprawdzamy kolumnę odpowiadającą potencjalnemu idolowi.
 - Wszystkie elementy w tej kolumnie (z wyjątkiem przekątnej) muszą być równe `1`.
 - Jeśli znajdziemy `0` w kolumnie, zbiór nie ma idola.
 
-### 3. Wynik
+#### 3. Wynik
 - Jeśli oba warunki są spełnione, idol został znaleziony.
 - Jeśli żaden wiersz nie spełnia pierwszego warunku lub weryfikacja kolumny się nie powiedzie, idol nie istnieje.
 
