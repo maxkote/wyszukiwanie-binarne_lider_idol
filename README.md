@@ -1,3 +1,9 @@
+## Spis Treści:
+- [1. Wyszukiwanie binarne](#wyszukiwanie-binarne)
+- [2. Lider w zbiorze](#lider-w-zbiorze)
+
+
+
 # 1. Wyszukiwanie binarne
 
 **Wyszukiwanie binarne** to wydajny algorytm używany do znajdowania wartości w posortowanych zbiorach danych. Jego kluczowa idea polega na dzieleniu zakresu wyszukiwania na pół w każdej iteracji, co znacznie przyspiesza proces.
@@ -29,7 +35,7 @@
 - **Rekurencyjna**: Funkcja wywołuje samą siebie, zmniejszając zakres w każdym kroku.
 
 
-# 2. Lider w zbiorze - Notatka
+# 2. Lider w zbiorze
 
 **Lider** w zbiorze to liczba, która występuje więcej niż **n/2** razy, gdzie **n** to liczba elementów w zbiorze. 
 
@@ -90,7 +96,7 @@ else:
 ```
 
 
-# 3. Wyszukiwanie Idola w Zbiorze
+# 3. Idol w zbiorze
 
 ## Opis problemu
 W pewnej grupie osób każda osoba może znać inne osoby, ale nie jest to relacja wzajemna (osoba A może znać osobę B, ale osoba B niekoniecznie zna osobę A). **Idol** to osoba, która:
@@ -112,4 +118,47 @@ macierz = [
     [1, 1, 1, 0, 1],  # Osoba 3
     [0, 0, 0, 0, 0]   # Osoba 4 (idol)
 ]
+```
+
+# Algorytm Wykrywania Idola
+
+## Kroki Algorytmu
+
+### 1. Znalezienie Potencjalnego Idola
+- Przechodzimy przez każdy wiersz macierzy.
+- Jeśli wiersz składa się wyłącznie z zer, osoba odpowiadająca temu wierszowi jest potencjalnym idolem.
+
+### 2. Weryfikacja Potencjalnego Idola
+- Sprawdzamy kolumnę odpowiadającą potencjalnemu idolowi.
+- Wszystkie elementy w tej kolumnie (z wyjątkiem przekątnej) muszą być równe `1`.
+- Jeśli znajdziemy `0` w kolumnie, zbiór nie ma idola.
+
+### 3. Wynik
+- Jeśli oba warunki są spełnione, idol został znaleziony.
+- Jeśli żaden wiersz nie spełnia pierwszego warunku lub weryfikacja kolumny się nie powiedzie, idol nie istnieje.
+
+---
+
+## Implementacja
+
+```python
+macierz = [
+    [0, 1, 0, 1, 1],
+    [0, 0, 1, 0, 1],
+    [0, 1, 0, 1, 1],
+    [1, 1, 1, 0, 1],
+    [0, 0, 0, 0, 0]
+]
+
+for i in range(len(macierz)):
+    if macierz[i] == [0] * len(macierz):  # Wiersz składający się z zer
+        for x in macierz[:i] + macierz[i+1:]:
+            if x[i] == 0:  # Sprawdzenie kolumny
+                print("Zbiór nie ma idola")
+                break
+        else:
+            print(f"Idol to osoba {i}")
+        break
+else:
+    print("Zbiór nie ma idola")
 ```
