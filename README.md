@@ -34,26 +34,26 @@
 
 ## Implementacje w Pythonie:
 - **Iteracyjna**: Używa pętli, aby zmniejszać zakres.
-  ```python
-   while low <= high:
+```python
+while low <= high:
 
-        mid = (high + low) // 2
+     mid = (high + low) // 2
 
-        # If x is greater, ignore left half
-        if arr[mid] < x:
-            low = mid + 1
+     # If x is greater, ignore left half
+     if arr[mid] < x:
+         low = mid + 1
 
-        # If x is smaller, ignore right half
-        elif arr[mid] > x:
-            high = mid - 1
+     # If x is smaller, ignore right half
+     elif arr[mid] > x:
+         high = mid - 1
 
-        # means x is present at mid
-        else:
-            return mid
+     # means x is present at mid
+     else:
+         return mid
 
-    # If we reach here, then the element was not present
-    return -1
-  ```
+ # If we reach here, then the element was not present
+ return -1
+```
 - **Rekurencyjna**: Funkcja wywołuje samą siebie, zmniejszając zakres w każdym kroku.
  ```python
 def binary_search(arr, low, high, x):
