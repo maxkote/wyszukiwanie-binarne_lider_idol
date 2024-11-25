@@ -1,5 +1,5 @@
 ## Spis Treści:
-- [1. Wyszukiwanie binarne](#wyszukiwanie-binarne)
+- [1. Wyszukiwanie binarne](#-1.-Wyszukiwanie-binarne)
 - [2. Lider w zbiorze](#2.-Lider-w-zbiorze)
 
 
