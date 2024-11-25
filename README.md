@@ -1,4 +1,4 @@
-# Wyszukiwanie binarne – Notatka
+# 1. Wyszukiwanie binarne
 
 **Wyszukiwanie binarne** to wydajny algorytm używany do znajdowania wartości w posortowanych zbiorach danych. Jego kluczowa idea polega na dzieleniu zakresu wyszukiwania na pół w każdej iteracji, co znacznie przyspiesza proces.
 
@@ -29,7 +29,7 @@
 - **Rekurencyjna**: Funkcja wywołuje samą siebie, zmniejszając zakres w każdym kroku.
 
 
-# Lider w zbiorze - Notatka
+# 2. Lider w zbiorze - Notatka
 
 **Lider** w zbiorze to liczba, która występuje więcej niż **n/2** razy, gdzie **n** to liczba elementów w zbiorze. 
 
@@ -87,4 +87,29 @@ if liczba_wystapien_lidera > len(zbior) / 2:
     print("Liderem zbioru jest ", lider)
 else:
     print("Zbiór nie ma lidera")
+```
 
+
+# 3. Wyszukiwanie Idola w Zbiorze
+
+## Opis problemu
+W pewnej grupie osób każda osoba może znać inne osoby, ale nie jest to relacja wzajemna (osoba A może znać osobę B, ale osoba B niekoniecznie zna osobę A). **Idol** to osoba, która:
+1. Jest znana przez wszystkich w grupie.
+2. Nie zna nikogo z grupy.
+
+Idola można znaleźć, analizując macierz sąsiedztwa. Wiersze w macierzy reprezentują wiedzę danej osoby o innych, a kolumny — wiedzę o tej osobie. Przyjmujemy, że:
+- Wartość `1` oznacza "zna".
+- Wartość `0` oznacza "nie zna".
+- Osoba nie zna samej siebie, więc na przekątnej macierzy są same zera.
+
+## Przykładowa macierz
+Przykład macierzy dla grupy 5 osób:
+```python
+macierz = [
+    [0, 1, 0, 1, 1],  # Osoba 0
+    [0, 0, 1, 0, 1],  # Osoba 1
+    [0, 1, 0, 1, 1],  # Osoba 2
+    [1, 1, 1, 0, 1],  # Osoba 3
+    [0, 0, 0, 0, 0]   # Osoba 4 (idol)
+]
+```
