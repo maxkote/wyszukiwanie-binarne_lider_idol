@@ -88,8 +88,8 @@ def binary_search(arr, low, high, x):
 **Lider** w zbiorze to liczba, która występuje więcej niż **n/2** razy, gdzie **n** to liczba elementów w zbiorze. 
 
 ### Przykłady:
-- Zbiór: `{1, 4, 6, 1, 1}` – Liderem jest liczba **1**, ponieważ występuje 3 razy, a `5 / 2 = 2.5` i 3 > 2.
-- Zbiór: `{8, 6, 4, 5, 3, 2}` – Brak lidera, ponieważ żadna liczba nie występuje więcej niż 3 razy.
+- Zbiór: `{1, 4, 6, 1, 1}` – Liderem jest liczba **1**, ponieważ występuje 3 razy, a `5/2 = 2.5`, więc `3 > 2`
+- Zbiór: `{8, 6, 4, 5, 3, 2}` – Brak lidera, ponieważ żadna liczba nie występuje więcej niż 3 razy `(6/2)`
 
 ## Właściwości zbiorów z liderem:
 - Jeśli zbiór ma lidera, usunięcie dwóch różnych liczb (nawet lidera i innej liczby) nie zmienia lidera.
