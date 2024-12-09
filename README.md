@@ -19,6 +19,9 @@
    - Jeśli jest większa: przeszukuj prawą połowę.
 3. Powtarzaj, aż znajdziesz wartość lub zakres stanie się pusty.
 
+![image](https://github.com/user-attachments/assets/1a73645f-8206-482c-b8c6-9cccbc098ea6)
+
+
 ## Kluczowe cechy:
 - **Efektywność**: Czas działania wynosi O(log n), ponieważ liczba porównań zmniejsza się o połowę z każdym krokiem.
 - **Wymagania**: Zbiór danych musi być **posortowany**.
